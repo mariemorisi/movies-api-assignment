@@ -1,11 +1,15 @@
 <template>
   <main class="home-view">
-    <div v-if="!loading && !errorFetchingMovies">
+    <div class="home-view_header">
+      <h2>Movies</h2>
+    </div>
+    <div v-if="!loading && !errorFetchingMovies" class="home-view_content">
       <MoviesList :movies="currentPageMovies" />
       <PaginationControls
         :currentPage="currentPage"
         :totalPages="totalPages"
         @onPageChange="handlePageChange"
+        class="pagination-controls"
       />
     </div>
     <div v-if="loading">Loading</div>
@@ -21,7 +25,7 @@ import PaginationControls from '@/components/PaginationControls.vue'
 const movies = ref([])
 const loading = ref(false)
 const currentPage = ref(1)
-const itemsPerPage = ref(5)
+const itemsPerPage = ref(12)
 const errorFetchingMovies = ref(false)
 
 onMounted(async () => {
@@ -59,9 +63,28 @@ const handlePageChange = (page) => {
 </script>
 <style scoped>
 .home-view {
+  min-height: 50vh;
+  min-width: 90vw;
+  padding: 0 var(--spacing-x-large);
+}
+
+.home-view_header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-medium);
+  padding: 0 var(--spacing-x-large);
+  margin-bottom: var(--spacing-large);
+}
+
+.home-view_content {
+  display: flex;
   flex-direction: column;
-  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-controls {
+  margin-top: var(--spacing-x-large);
 }
 </style>

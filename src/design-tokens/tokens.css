@@ -3,20 +3,24 @@
 :root {
   --font-family-body: 'Poppins', sans-serif;
   --color-text-body: #eaeced;
-  --color-background-primary-gradient: linear-gradient(
-    150deg,
-    rgba(101, 130, 146, 1) 0%,
-    rgba(170, 165, 155, 1) 99%
+  --color-background-primary-gradient: radial-gradient(
+    circle,
+    rgba(19, 24, 47, 1) 16%,
+    rgba(46, 49, 66, 1) 31%,
+    rgba(71, 69, 63, 1) 47%,
+    rgba(74, 75, 86, 1) 72%,
+    rgba(72, 73, 85, 1) 93%
   );
   --color-background-body: #648292;
   --color-blue-light: #839aa7;
   --color-yellow: #ffca30;
   --color-red-dark: #e02045;
   --color-green-dark: #4d967b;
+  --color-black: #000000;
   --spacing-small: 4px;
   --spacing-medium: 8px;
-  --spacing-large: 12px;
-  --spacing-x-large: 20px;
+  --spacing-large: 20px;
+  --spacing-x-large: 40px;
   --duration-paused: paused;
   --duration-slow: 3s;
   --duration-fast: 500ms;
@@ -24,8 +28,9 @@
   --easing-slow: 3s;
   --easing-fast: 500ms;
   --radius-circle: 50%;
-  --radius-large: 8px;
-  --radius-small: 2px;
+  --radius-large: 20px;
+  --radius-medium: 15px;
+  --radius-small: 10px;
   --opacity-opacity-25: 0.25;
   --opacity-opacity-50: 0.5;
   --opacity-opacity-75: 0.75;

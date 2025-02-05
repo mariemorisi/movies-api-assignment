@@ -1,6 +1,5 @@
 <template>
   <div class="movies-list">
-    <h1>Movies list</h1>
     <div class="movies-list_grid">
       <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
     </div>
@@ -13,31 +12,50 @@ import MovieCard from './MovieCard.vue'
 const props = defineProps(['movies'])
 </script>
 <style scoped>
+@import '../design-tokens/tokens.css';
 .movies-list {
-  padding: 20px;
+  padding: var(--spacing-x-medium);
   max-width: 1200px;
   min-width: 80vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .movies-list_grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--spacing-medium);
 }
 
-@media (max-width: 900px) {
+@media (min-width: 1400px) {
   .movies-list_grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .movies-list_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1199px) {
+  .movies-list_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 770px) {
+  .movies-list_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
   .movies-list_grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .movies-list_grid > * {
+    margin: 0 auto;
   }
 }
 </style>
