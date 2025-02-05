@@ -14,7 +14,7 @@ import StarIcon from './icons/star-icon.vue'
 const props = defineProps(['movie'])
 
 const getPosterStyle = (movie) => {
-  return `background-image: url(${movie.image_url}); background-size: cover; background-position: center`
+  return `background-image: url(${movie.image_url}); background-size: cover; background-position: top`
 }
 </script>
 <style>

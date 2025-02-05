@@ -21,7 +21,7 @@
 <script setup>
 import MoviesList from '../components/MoviesList.vue'
 import { onMounted, ref, computed } from 'vue'
-import { fetchMovies } from '../services/movies-service'
+import { getMoviesWithPosters } from '../services/movies-service'
 import PaginationControls from '@/components/PaginationControls.vue'
 
 const movies = ref([])
@@ -37,7 +37,7 @@ onMounted(async () => {
 const getMoviesList = async () => {
   loading.value = true
   try {
-    const response = await fetchMovies()
+    const response = await getMoviesWithPosters()
     movies.value = response.items
     errorFetchingMovies.value = false
   } catch (error) {
@@ -48,7 +48,6 @@ const getMoviesList = async () => {
     loading.value = false
   }
 }
-
 const currentPageMovies = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage.value
   const end = start + itemsPerPage.value
