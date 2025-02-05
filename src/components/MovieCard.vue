@@ -1,7 +1,7 @@
 <template>
   <div class="movie-card">
     <img :src="movie.image_url" :alt="movie.title" class="movie-card_img" />
-    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.title }}</p>
     <p>{{ movie.rating }}</p>
   </div>
 </template>
