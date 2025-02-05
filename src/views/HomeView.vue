@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <MoviesList />
+  <main class="home-view">
+    <MoviesList :movies="movies" />
   </main>
 </template>
 <script setup>
@@ -24,3 +24,10 @@ const getMoviesList = async () => {
   loading.value = false
 }
 </script>
+<style scoped>
+.home-view {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+</style>
