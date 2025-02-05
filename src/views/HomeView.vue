@@ -12,8 +12,10 @@
         class="pagination-controls"
       />
     </div>
-    <div v-if="loading">Loading</div>
-    <div v-if="errorFetchingMovies">Something went wrong, please try again</div>
+    <div v-if="loading" class="home-view_loader"></div>
+    <div v-if="errorFetchingMovies" class="home-view_error">
+      Something went wrong, please try again
+    </div>
   </main>
 </template>
 <script setup>
@@ -86,5 +88,41 @@ const handlePageChange = (page) => {
 
 .pagination-controls {
   margin-top: var(--spacing-x-large);
+}
+
+.home-view_error {
+  color: var(--color-error);
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  text-align: center;
+}
+.home-view_loader {
+  margin: auto;
+  margin-top: 50px;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #0000;
+  border-right-color: #ffa50097;
+  position: relative;
+  animation: l24 1s infinite linear;
+}
+.home-view_loader:before,
+.home-view_loader:after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+.home-view_loader:after {
+  animation-duration: 4s;
+}
+@keyframes l24 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 </style>
