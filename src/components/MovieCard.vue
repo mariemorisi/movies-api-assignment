@@ -71,7 +71,7 @@ const getPosterStyle = (movie) => {
 .movie-card_title {
   font-size: 0.7rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .movie-card_rating {
@@ -86,5 +86,20 @@ const getPosterStyle = (movie) => {
   line-height: 1.4;
   max-width: 90%;
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  .movie-card {
+    width: 100px;
+    margin-bottom: 20px !important;
+  }
+
+  .movie-card_img-container {
+    width: 100px;
+    height: 120px;
+  }
+  .movie-card_overlay {
+    display: none;
+  }
 }
 </style>

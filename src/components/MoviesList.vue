@@ -49,9 +49,9 @@ const props = defineProps(['movies'])
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .movies-list_grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .movies-list_grid > * {

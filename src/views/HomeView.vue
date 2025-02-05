@@ -60,6 +60,11 @@ const totalPages = computed(() => {
 
 const handlePageChange = (page) => {
   currentPage.value = page
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
 }
 </script>
 <style scoped>
